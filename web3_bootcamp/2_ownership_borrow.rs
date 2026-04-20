@@ -1,6 +1,13 @@
-fn main() {
-    println!("Borrowing and Ownership");
+/*
+    3 Rules of Borrowing (CORE)
 
+        Rule 1: You can have ANY number of immutable references (&T)
+        Rule 2: You can have ONLY ONE mutable reference (&mut T)
+        Rule 3 (MOST IMPORTANT): You cannot mix mutable and immutable references at the same time
+
+*/
+
+fn main() {
     //Case 1: Ownership MOVE issue
     let v = vec![1,2,3];
 
@@ -16,7 +23,6 @@ fn main() {
     for i in &v {
         println!("{}", i);
     }
-
     println!("{:?}", v); //  works
 
 
@@ -26,19 +32,12 @@ fn main() {
     for i in &mut v { //&mut v → mutable borrow
         *i += 1;
     }
-
     println!("{:?}", v); // [2,3,4]
 
-    /*
 
-        3 Rules of Borrowing (CORE)
 
-            Rule 1: You can have ANY number of immutable references (&T)
-            Rule 2: You can have ONLY ONE mutable reference (&mut T)
-            Rule 3 (MOST IMPORTANT): You cannot mix mutable and immutable references at the same time
-
-    */
-
+    
+// -------------------------------------------------
 
     //Example : 
     
@@ -57,10 +56,7 @@ fn main() {
     let s = &mut str;
     s.clear();
 
-    println!("{}", str);
-
-
-
+    println!("{}", str); // empty str
 }
 
 fn get_first(str: &String) -> char {
