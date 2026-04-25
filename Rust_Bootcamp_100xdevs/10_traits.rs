@@ -20,4 +20,4 @@ fn main(){
     };
     
     println!("{}", rect1.area());
-}
+}X
