@@ -1,14 +1,10 @@
 #[derive(PartialEq)]
+
 enum Direction {
     UP,
     DOWN,
     LEFT,
     RIGHT,
-}
-
-fn main() {
-    move_away(Direction::UP);
-    move_away(Direction::DOWN);
 }
 
 //  Pattern matching syntax 
@@ -20,6 +16,12 @@ fn move_away(direction: Direction) {
         Direction::RIGHT => print!("moved in the right direction"),
     }
 }
+
+fn main() {
+    move_away(Direction::UP);
+    move_away(Direction::DOWN);
+}
+
 
 // Note : 
 //  - One thing to remember in pattern match syntax is that : "we don't use return keyword to return anything, rust handles it".
