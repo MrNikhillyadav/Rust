@@ -1,5 +1,5 @@
 [package]
-name = "rust_practice_problems"
+name = "basic"
 version = "0.1.0"
 edition = "2024"
 
